@@ -87,7 +87,7 @@ export default function Home() {
                   AIML, CMRIT College of Engineering, Bengaluru, India
                 </p>
                 <p>
-                  <span className="font-semibold text-white">Skills:</span> DL, RL, LLMS
+                  <span className="font-semibold text-white">Currently Learning:</span> DL, RL, LLMS
                   Core and GenAI and building full stack applications
                 </p>
                 <p>
