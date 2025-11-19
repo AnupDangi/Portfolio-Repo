@@ -221,7 +221,7 @@ export default function Home() {
               <li>
                 Ongoing Project: Desktop AI Assistant: {" "}
                 <a
-                  href="https://newyantra.vercel.app/"
+                  href="https://newyantra.com/"
                   target="_blank"
                   className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
                 >
