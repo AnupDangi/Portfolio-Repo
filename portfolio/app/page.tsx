@@ -160,14 +160,13 @@ export default function Home() {
           <div className="space-y-3">
             <ul className="list-disc list-inside space-y-3 sm:space-y-4 ml-2 sm:ml-4 text-base sm:text-lg leading-relaxed text-gray-300">
               <li>
-                Internship Project: Talk with your data in Natural Language and
-                generate intutive charts:{" "}
+                SAI : Smart AI Interviewer{" "}
                 <a
-                  href="https://nora.areta360.com/"
+                  href="https://smart-ai-interviewer-sai.vercel.app/"
                   target="_blank"
                   className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
                 >
-                  Nora
+                  SAI
                 </a>
               </li>
               <li>
@@ -193,11 +192,11 @@ export default function Home() {
               <li>
                 Multi-Modal RAG using local LLM for SIH:{" "}
                 <a
-                  href="https://github.com/AnupDangi/SIH25231-Multi-Modal-RAG"
+                  href="https://youtu.be/R_3bSLBKwlg"
                   target="_blank"
                   className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
                 >
-                  Youtube Link
+                  Youtube Video
                 </a>{" "}
                 <a
                   href="https://github.com/AnupDangi/SIH25231-Multi-Modal-RAG"
