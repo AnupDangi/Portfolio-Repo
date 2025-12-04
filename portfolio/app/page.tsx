@@ -132,7 +132,7 @@ export default function Home() {
                     View
                   </a>
                 </p>
-              </div>
+              </div>  
 
               <p className="text-base sm:text-lg leading-relaxed pt-4 text-gray-300 italic">
                 I am interested in real life challenging problems.I love to do
