@@ -125,7 +125,7 @@ export default function Home() {
                 <p className="text-base sm:text-lg">
                   <span className="font-semibold text-white">CV:</span>{" "}
                   <a
-                    href="/RESUME_ANUPP.pdf"
+                    href="/Resume.pdf"
                     target="_blank"
                     className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
                   >
