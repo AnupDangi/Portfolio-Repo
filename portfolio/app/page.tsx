@@ -250,16 +250,6 @@ export default function Home() {
                   AICOLEARN
                 </a>
               </li>
-              <li>
-                Ongoing Project: Desktop AI Assistant: {" "}
-                <a
-                  href="https://newyantra.com/"
-                  target="_blank"
-                  className="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors"
-                >
-                  NewYantra
-                </a>
-              </li>
             </ul>
             <p className="text-base sm:text-lg mt-4 text-gray-500">
               Worked on many other projects, check my github for more details
