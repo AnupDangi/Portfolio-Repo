@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: "Full Stack Developer and AI Engineer specializing in modern web applications, machine learning, and innovative solutions.",
     images: [
       {
-        url: "/og-image.png",
+        url: "/newpp.jpeg",
         width: 1200,
         height: 630,
         alt: "Anup Dangi Portfolio",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Anup Dangi - Full Stack Developer & AI Engineer",
     description: "Full Stack Developer and AI Engineer specializing in modern web applications, machine learning, and innovative solutions.",
-    images: ["/og-image.png"],
+    images: ["/newpp.jpeg"],
   },
   robots: {
     index: true,

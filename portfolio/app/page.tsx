@@ -24,6 +24,7 @@ export default function Home() {
               </svg>
             </button>
             <a href="#about" className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity">
+              <img src="/logo.svg" alt="AD Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
               <span className="text-lg sm:text-3xl font-semibold text-neutral-900">Anup Dangi</span>
             </a>
           </div>
@@ -180,7 +181,7 @@ export default function Home() {
                   alt="profile"
                   width={500}
                   height={500}
-                  className="rounded object-cover w-full max-w-[280px] sm:max-w-[300px] shadow-xl ring-2 ring-gray-100"
+                  className="rounded-full object-cover w-full max-w-[280px] sm:max-w-[300px] shadow-xl ring-2 ring-gray-100"
                 />
               </div>
             </aside>
@@ -240,7 +241,7 @@ export default function Home() {
                 </a>
               </li>
               <li>
-                (Ongoing) My First AI Product:AI Powered Collaborative Platform
+                (Paused) My First AI Product:AI Powered Collaborative Platform
                 will be launched soon stayed tuned:{" "}
                 <a
                   href="https://aicolearn.live"
