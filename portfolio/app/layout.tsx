@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Anup Dangi",
+  verification: {
+    google: "VyxgKl-6MA0FinccEbTP1l-dgzh-uXjQ_u6jeU40e0c",
+  },
 };
 
 export default function RootLayout({
