@@ -180,7 +180,7 @@ export default function Home() {
                   alt="profile"
                   width={500}
                   height={500}
-                  className="rounded-full object-cover w-full max-w-[280px] sm:max-w-[300px] shadow-xl ring-2 ring-gray-100"
+                  className="rounded object-cover w-full max-w-[280px] sm:max-w-[300px] shadow-xl ring-2 ring-gray-100"
                 />
               </div>
             </aside>
