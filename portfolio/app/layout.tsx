@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Anup Dangi" }],
   creator: "Anup Dangi",
   metadataBase: new URL("https://anupdangi.com.np"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -62,11 +65,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Anup Dangi",
+    url: "https://anupdangi.com.np",
+    image: "https://anupdangi.com.np/newpp.jpeg",
+    jobTitle: "Full Stack Developer & AI Engineer",
+    sameAs: [
+      "https://www.linkedin.com/in/anup-dangi/",
+      "https://github.com/AnupDangi",
+      "https://www.instagram.com/anupdangi22/",
+      "https://medium.com/@anupdangi1589",
+      "https://www.kaggle.com/anupdangi339",
+      "https://www.facebook.com/Anup.Dangi111",
+    ],
+  };
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
