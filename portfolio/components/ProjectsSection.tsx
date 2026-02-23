@@ -2,6 +2,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import React, { useRef } from "react";
+import { Github, Youtube, ExternalLink } from "lucide-react";
 
 // Individual Project Card component to handle 3D tilt physics per card
 function ProjectCard({ proj, idx }: { proj: any, idx: number }) {
@@ -73,7 +74,7 @@ function ProjectCard({ proj, idx }: { proj: any, idx: number }) {
                     {proj.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 mb-6 relative z-10">
+                <div className="flex flex-wrap gap-2 pt-2 mb-6 relative z-10 mt-auto">
                     {proj.tech.map((t: string) => (
                         <span key={t} className="text-xs px-2 py-1 bg-white/10 rounded text-gray-300 shadow-sm border border-white/5">
                             {t}
@@ -81,21 +82,27 @@ function ProjectCard({ proj, idx }: { proj: any, idx: number }) {
                     ))}
                 </div>
 
-                <a
-                    href={proj.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-flex items-center text-sm font-semibold text-neon hover:text-white transition-colors relative z-10 w-fit"
-                >
-                    View Project
-                    <motion.svg
-                        whileHover={{ x: 5 }}
-                        className="w-4 h-4 ml-1"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </motion.svg>
-                </a>
+                {/* Links Container */}
+                <div className="flex items-center gap-4 relative z-10">
+                    {proj.live && (
+                        <a href={proj.live} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-semibold text-neon hover:text-white transition-colors" title="Live Project">
+                            <ExternalLink className="w-5 h-5 mr-1.5" />
+                            Live
+                        </a>
+                    )}
+                    {proj.github && (
+                        <a href={proj.github} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-semibold text-gray-300 hover:text-white transition-colors" title="View Source">
+                            <Github className="w-5 h-5 mr-1.5" />
+                            {proj.githubText || "Code"}
+                        </a>
+                    )}
+                    {proj.youtube && (
+                        <a href={proj.youtube} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-semibold text-red-400 hover:text-red-300 transition-colors" title="Watch Demo">
+                            <Youtube className="w-5 h-5 mr-1.5" />
+                            Demo
+                        </a>
+                    )}
+                </div>
             </div>
         </motion.div>
     );
@@ -105,43 +112,47 @@ export default function ProjectsSection() {
     const projects = [
         {
             title: "PRIMEFACE Engineering",
-            link: "https://theprimeface.com",
+            live: "https://theprimeface.com",
             tech: ["Next.js", "Payment", "eSewa", "Email Automation"],
             description: "Professional Vastu-integrated consultancy platform featuring eSewa payment integration for service bookings and automated transactional email delivery.",
         },
         {
             title: "Portfolio: Er. Bikram Babu KC",
-            link: "https://bikrambabu.com.np",
+            live: "https://bikrambabu.com.np",
             tech: ["Next.js", "Portfolio", "Personal Branding"],
             description: "Professional personal brand portfolio for a civil engineer and Vastu consultant highlighting experience, academic achievements, and project history.",
         },
         {
             title: "AICOLEARN (Paused AI Product)",
-            link: "https://youtu.be/gs5YvjoeXEA",
+            youtube: "https://youtu.be/gs5YvjoeXEA",
+            github: "#", // User mentioned "codebase private. github", we can put a disabled link or private tag.
+            githubText: "Private Codebase",
             tech: ["AI", "WebRTC", "Collaboration", "RAG"],
             description: "AI-powered collaborative learning platform featuring real-time WebRTC audio/video, whiteboarding (tldraw), synchronous code collaboration (yjs), and multi-modal AI tools.",
         },
         {
             title: "SAI: Smart AI Interviewer",
-            link: "https://smart-ai-interviewer-sai.vercel.app/",
+            live: "https://smart-ai-interviewer-sai.vercel.app/",
+            github: "https://github.com/AnupDangi/SmartAIInterviewer-SAI-.git",
             tech: ["AI", "Next.js"],
             description: "An intelligent platform for conducting and analyzing AI-driven mock interviews.",
         },
         {
             title: "A Trading Platform: Zerodha Clone",
-            link: "https://zerodha-clone-ykwn.vercel.app/",
+            live: "https://zerodha-clone-ykwn.vercel.app/",
+            github: "https://github.com/AnupDangi/ZerodhaClone",
             tech: ["React", "Fullstack"],
             description: "A comprehensive trading platform clone featuring real-time market data capabilities.",
         },
         {
             title: "Student Safety Tracker",
-            link: "https://github.com/AnupDangi/StudentSafetyTracking_5thSem.git",
+            github: "https://github.com/AnupDangi/StudentSafetyTracking_5thSem.git",
             tech: ["Tracking", "Safety", "CV"],
             description: "A platform where international students provide attendance through live face detection and location tracking.",
         },
         {
             title: "Multi-Modal RAG using local LLM",
-            link: "https://github.com/AnupDangi/SIH25231-Multi-Modal-RAG",
+            github: "https://github.com/AnupDangi/SIH25231-Multi-Modal-RAG",
             tech: ["RAG", "LLM", "Python", "Local"],
             description: "Multimodal RAG utilizing local Ollama models and CLIP for images to regenerate indexed chunks with citations.",
         }
