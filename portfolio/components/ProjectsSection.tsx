@@ -109,7 +109,7 @@ function ProjectCard({ proj, idx }: { proj: any, idx: number }) {
 }
 
 export default function ProjectsSection() {
-    const projects = [
+    const clientProjects = [
         {
             title: "PRIMEFACE Engineering",
             live: "https://theprimeface.com",
@@ -122,6 +122,9 @@ export default function ProjectsSection() {
             tech: ["Next.js", "Portfolio", "Personal Branding"],
             description: "Professional personal brand portfolio for a civil engineer and Vastu consultant highlighting experience, academic achievements, and project history.",
         },
+    ];
+
+    const personalProjects = [
         {
             title: "AICOLEARN (Paused AI Product)",
             youtube: "https://youtu.be/gs5YvjoeXEA",
@@ -160,8 +163,33 @@ export default function ProjectsSection() {
 
     return (
         <SectionWrapper id="projects" title="Projects">
+
+            {/* Client Projects Section */}
+            <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-2 inline-block"
+            >
+                Client Projects
+            </motion.h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                {clientProjects.map((proj, idx) => (
+                    <ProjectCard key={idx} proj={proj} idx={idx} />
+                ))}
+            </div>
+
+            {/* Personal Projects Section */}
+            <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-2 inline-block pt-4"
+            >
+                Personal Projects
+            </motion.h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {projects.map((proj, idx) => (
+                {personalProjects.map((proj, idx) => (
                     <ProjectCard key={idx} proj={proj} idx={idx} />
                 ))}
             </div>
@@ -173,7 +201,7 @@ export default function ProjectsSection() {
                 transition={{ duration: 1, delay: 0.5 }}
                 className="text-center text-gray-400 mt-16"
             >
-                Worked on many other projects, check my <a href="https://github.com/AnupDangi" target="_blank" className="text-neon hover:underline font-semibold">GitHub</a> for more details.
+                Worked on many other projects, check my <a href="https://github.com/AnupDangi" target="_blank" rel="noopener noreferrer" className="text-neon hover:underline font-semibold">GitHub</a> for more details.
             </motion.p>
         </SectionWrapper>
     );
