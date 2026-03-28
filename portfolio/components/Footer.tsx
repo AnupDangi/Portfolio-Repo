@@ -1,9 +1,66 @@
+"use client";
+import { Github, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+
+const socials = [
+    {
+        label: "GitHub",
+        href: "https://github.com/AnupDangi",
+        icon: Github,
+    },
+    {
+        label: "LinkedIn",
+        href: "https://linkedin.com/in/anup-dangi",
+        icon: Linkedin,
+    },
+];
+
 export default function Footer() {
     return (
-        <footer className="border-t border-white/10 mt-12 bg-black/50 backdrop-blur-sm relative z-10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-sm text-gray-500 text-center">
-                © Copyright {new Date().getFullYear()} Anup Dangi. All rights reserved.
+        <footer className="border-t border-white/8 mt-12 relative z-10"
+            style={{ borderColor: "var(--surface-border)" }}
+        >
+            <div className="max-w-5xl mx-auto px-6 sm:px-12 md:px-24 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+
+                {/* Copyright */}
+                <p className="text-sm text-gray-500">
+                    © {new Date().getFullYear()}{" "}
+                    <span className="text-gray-400 font-medium">Anup Dangi</span>
+                    . All rights reserved.
+                </p>
+
+                {/* Social Links */}
+                <div className="flex items-center gap-4">
+                    {socials.map(({ label, href, icon: Icon }) => (
+                        <motion.a
+                            key={label}
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={label}
+                            whileHover={{ scale: 1.15 }}
+                            whileTap={{ scale: 0.92 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 18 }}
+                            className="w-9 h-9 flex items-center justify-center rounded-lg border text-gray-400 hover:text-neon transition-colors duration-200"
+                            style={{
+                                borderColor: "var(--surface-border)",
+                                background: "var(--surface)",
+                            }}
+                            onMouseEnter={(e) => {
+                                (e.currentTarget as HTMLElement).style.boxShadow = "var(--neon-glow-sm)";
+                                (e.currentTarget as HTMLElement).style.borderColor = "var(--neon-muted)";
+                            }}
+                            onMouseLeave={(e) => {
+                                (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                                (e.currentTarget as HTMLElement).style.borderColor = "var(--surface-border)";
+                            }}
+                        >
+                            <Icon className="w-4 h-4" />
+                        </motion.a>
+                    ))}
+                </div>
             </div>
         </footer>
     );
 }
+

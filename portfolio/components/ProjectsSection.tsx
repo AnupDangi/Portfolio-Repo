@@ -2,7 +2,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import React, { useRef } from "react";
-import { Github, Youtube, ExternalLink } from "lucide-react";
+import { Github, Youtube, ExternalLink, Linkedin } from "lucide-react";
 
 // Individual Project Card component to handle 3D tilt physics per card
 function ProjectCard({ proj, idx }: { proj: any, idx: number }) {
@@ -102,6 +102,12 @@ function ProjectCard({ proj, idx }: { proj: any, idx: number }) {
                             Demo
                         </a>
                     )}
+                    {proj.linkedin && (
+                        <a href={proj.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors" title="View on LinkedIn">
+                            <Linkedin className="w-5 h-5 mr-1.5" />
+                            Post
+                        </a>
+                    )}
                 </div>
             </div>
         </motion.div>
@@ -122,6 +128,26 @@ export default function ProjectsSection() {
             tech: ["Next.js", "Portfolio", "Personal Branding"],
             description: "Professional personal brand portfolio for a civil engineer and Vastu consultant highlighting experience, academic achievements, and project history.",
         },
+        {
+            title: "Neelopatra",
+            live: "https://neelopatra.com",
+            tech: ["Next.js", "NLP", "AI Summarization", "Fact-Checking", "Chatbot"],
+            description: "AI-driven news platform built with modern web technologies — featuring NLP-based summarization, chatbot-powered information retrieval, and an AI-assisted fact-checking pipeline for real-time misinformation detection.",
+        },
+        {
+            title: "Purnima Suppliers",
+            live: "https://www.purnimasuppliers.com",
+            tech: ["Next.js", "E-Commerce", "Product Listings", "Offers"],
+            description: "E-commerce platform for Purnima Suppliers — a trusted brand with 15+ years of customer loyalty. Showcasing products, deals, and offers online to expand visibility and strengthen customer engagement in the digital space.",
+        },
+    ];
+    const workingOn = [
+        {
+            title: "Anvaya — A Collaborative Platform for Students & Researchers",
+            live: "https://anvaya.space",
+            tech: ["Next.js", "RAG", "Mem0", "AI LLMs", "PDF Highlights", "tldraw Canvas"],
+            description: "An AI-first collaborative workspace built for students and researchers. Merge interactive PDF reading with an infinite canvas — highlight documents, get instant AI explanations, and visually map ideas together, all in one place.",
+        },
     ];
 
     const personalProjects = [
@@ -132,6 +158,14 @@ export default function ProjectsSection() {
             githubText: "Private Codebase",
             tech: ["AI", "WebRTC", "Collaboration", "RAG"],
             description: "AI-powered collaborative learning platform featuring real-time WebRTC audio/video, whiteboarding (tldraw), synchronous code collaboration (yjs), and multi-modal AI tools.",
+        },
+        {
+            title: "VyaparAI",
+            youtube: "https://youtu.be/gs5YvjoeXEA",
+            github: "https://github.com/AnupDangi/VyaparAI",
+            linkedin: "https://www.linkedin.com/posts/anup-dangi_nepcoders-openaiacademy-nxtwave-activity-7403513536783507456-XQa1?utm_source=share&utm_medium=member_desktop&rcm=ACoAADwAhfoBl-jNivygo9ZxIWXeNMbqc1WyFZc",
+            tech: ["AI", "E-Commerce", "NL2SQL", "EasyOCR"],
+            description: "Next-gen e-commerce solution powered by NLP. Features a conversational 'Talk to Your Data' interface for admins and a smart shopping assistant for customers. Upload a handwritten shopping list — VyaparAI extracts items and matches them from your inventory.",
         },
         {
             title: "SAI: Smart AI Interviewer",
@@ -165,29 +199,56 @@ export default function ProjectsSection() {
         <SectionWrapper id="projects" title="Projects">
 
             {/* Client Projects Section */}
-            <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+            <motion.div
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-2 inline-block"
+                transition={{ duration: 0.45 }}
+                className="flex items-center gap-3 mb-6"
             >
-                Client Projects
-            </motion.h3>
+                <span className="w-[3px] h-5 rounded-full bg-neon shrink-0" />
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-400">
+                    Client Projects
+                </h3>
+            </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 {clientProjects.map((proj, idx) => (
                     <ProjectCard key={idx} proj={proj} idx={idx} />
                 ))}
             </div>
 
-            {/* Personal Projects Section */}
-            <motion.h3
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+            {/* Currently Working On Section */}
+            <motion.div
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-2 inline-block pt-4"
+                transition={{ duration: 0.45 }}
+                className="flex items-center gap-3 mb-6"
             >
-                Personal Projects
-            </motion.h3>
+                <span className="w-[3px] h-5 rounded-full bg-neon shrink-0" />
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-400">
+                    🚀 Currently Working On
+                </h3>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                {workingOn.map((proj, idx) => (
+                    <ProjectCard key={idx} proj={proj} idx={idx} />
+                ))}
+            </div>
+
+            {/* Personal Projects Section */}
+            <motion.div
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45 }}
+                className="flex items-center gap-3 mb-6 pt-4"
+            >
+                <span className="w-[3px] h-5 rounded-full bg-neon shrink-0" />
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-400">
+                    Personal Projects
+                </h3>
+            </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {personalProjects.map((proj, idx) => (
                     <ProjectCard key={idx} proj={proj} idx={idx} />

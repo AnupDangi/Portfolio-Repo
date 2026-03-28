@@ -98,6 +98,7 @@ export default function HeroSection() {
                             rotate: [0, 2, -2, 0]
                         }}
                         transition={{
+                            type: "tween",
                             duration: 6,
                             repeat: Infinity,
                             ease: "easeInOut"
