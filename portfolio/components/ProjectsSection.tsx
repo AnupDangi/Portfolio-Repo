@@ -60,23 +60,23 @@ function ProjectCard({ proj, idx }: { proj: any, idx: number }) {
             className="relative h-full perspective-[1000px] z-10"
         >
             <div
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 shadow-2xl backdrop-blur-sm h-full flex flex-col group relative overflow-hidden"
+                className="bg-surface border border-surface-border rounded-2xl p-6 shadow-2xl backdrop-blur-sm h-full flex flex-col group relative overflow-hidden"
                 style={{ transform: "translateZ(30px)" }} // Pop out content slightly 
             >
                 {/* Hover Highlight Layer */}
                 <div className="absolute inset-0 bg-gradient-to-br from-neon/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-neon transition-colors relative z-10">
+                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-neon transition-colors relative z-10">
                     {proj.title}
                 </h3>
 
-                <p className="text-gray-400 text-sm mb-4 relative z-10 leading-relaxed">
+                <p className="text-text-muted text-sm mb-4 relative z-10 leading-relaxed">
                     {proj.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2 pt-2 mb-6 relative z-10 mt-auto">
                     {proj.tech.map((t: string) => (
-                        <span key={t} className="text-xs px-2 py-1 bg-white/10 rounded text-gray-300 shadow-sm border border-white/5">
+                        <span key={t} className="text-xs px-2 py-1 bg-surface border border-surface-border rounded text-text-muted shadow-sm">
                             {t}
                         </span>
                     ))}
@@ -85,13 +85,13 @@ function ProjectCard({ proj, idx }: { proj: any, idx: number }) {
                 {/* Links Container */}
                 <div className="flex items-center gap-4 relative z-10">
                     {proj.live && (
-                        <a href={proj.live} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-semibold text-neon hover:text-white transition-colors" title="Live Project">
+                        <a href={proj.live} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-semibold text-neon hover:text-foreground transition-colors" title="Live Project">
                             <ExternalLink className="w-5 h-5 mr-1.5" />
                             Live
                         </a>
                     )}
                     {proj.github && (
-                        <a href={proj.github} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-semibold text-gray-300 hover:text-white transition-colors" title="View Source">
+                        <a href={proj.github} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm font-semibold text-text-muted hover:text-foreground transition-colors" title="View Source">
                             <Github className="w-5 h-5 mr-1.5" />
                             {proj.githubText || "Code"}
                         </a>
@@ -207,7 +207,7 @@ export default function ProjectsSection() {
                 className="flex items-center gap-3 mb-6"
             >
                 <span className="w-[3px] h-5 rounded-full bg-neon shrink-0" />
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-400">
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-text-muted">
                     Client Projects
                 </h3>
             </motion.div>
@@ -226,7 +226,7 @@ export default function ProjectsSection() {
                 className="flex items-center gap-3 mb-6"
             >
                 <span className="w-[3px] h-5 rounded-full bg-neon shrink-0" />
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-400">
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-text-muted">
                     🚀 Currently Working On
                 </h3>
             </motion.div>
@@ -245,7 +245,7 @@ export default function ProjectsSection() {
                 className="flex items-center gap-3 mb-6 pt-4"
             >
                 <span className="w-[3px] h-5 rounded-full bg-neon shrink-0" />
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-gray-400">
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-text-muted">
                     Personal Projects
                 </h3>
             </motion.div>
@@ -260,7 +260,7 @@ export default function ProjectsSection() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="text-center text-gray-400 mt-16"
+                className="text-center text-text-muted mt-16 text-sm"
             >
                 Worked on many other projects, check my <a href="https://github.com/AnupDangi" target="_blank" rel="noopener noreferrer" className="text-neon hover:underline font-semibold">GitHub</a> for more details.
             </motion.p>

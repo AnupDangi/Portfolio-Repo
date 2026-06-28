@@ -19,7 +19,7 @@ export default function SectionWrapper({ id, title, children }: SectionWrapperPr
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="mb-12"
             >
-                <h2 className="text-3xl font-bold text-white tracking-tight">{title}</h2>
+                <h2 className="text-3xl font-bold text-foreground tracking-tight">{title}</h2>
                 {/* Asymmetric left-border gradient accent — replaces the generic centered underline */}
                 <div className="mt-3 flex items-center gap-3">
                     <div

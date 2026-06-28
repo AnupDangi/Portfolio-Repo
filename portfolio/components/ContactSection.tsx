@@ -59,7 +59,7 @@ export default function ContactSection() {
                     transition={{ duration: 0.6 }}
                     className="flex-1"
                 >
-                    <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+                    <p className="text-text-muted text-lg mb-8 leading-relaxed">
                         Have a project in mind, or just want to say hi? Feel free to reach out via the form, or connect with me on social media!
                     </p>
 
@@ -79,12 +79,12 @@ export default function ContactSection() {
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-neon hover:bg-neon/10 transition-colors duration-300 group shadow-lg"
+                                className="flex items-center gap-3 p-4 rounded-xl bg-surface border border-surface-border hover:border-neon hover:bg-neon/10 transition-colors duration-300 group shadow-lg"
                             >
-                                <div className="text-gray-400 group-hover:text-neon transition-colors">
+                                <div className="text-text-muted group-hover:text-neon transition-colors">
                                     {link.icon}
                                 </div>
-                                <span className="text-gray-300 group-hover:text-white font-medium transition-colors">
+                                <span className="text-text-muted group-hover:text-foreground font-medium transition-colors">
                                     {link.label}
                                 </span>
                             </motion.a>
@@ -100,21 +100,21 @@ export default function ContactSection() {
                     transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.2 }}
                     className="flex-1"
                 >
-                    <form onSubmit={handleSubmit} className="space-y-6 bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md relative overflow-hidden group">
+                    <form onSubmit={handleSubmit} className="space-y-6 bg-surface border border-surface-border rounded-2xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md relative overflow-hidden group">
                         {/* Ambient form glow */}
                         <div className="absolute -top-40 -right-40 w-80 h-80 bg-neon/10 rounded-full blur-[80px] pointer-events-none group-hover:bg-neon/20 transition-colors duration-1000" />
 
-                        <h3 className="text-2xl font-bold text-white mb-6 relative z-10">Send a Message</h3>
+                        <h3 className="text-2xl font-bold text-foreground mb-6 relative z-10">Send a Message</h3>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative z-10">
                             <input name="name" type="text" required placeholder="Your Name"
-                                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all" />
+                                className="w-full bg-background border border-surface-border rounded-xl px-4 py-3 text-foreground placeholder-text-muted/60 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all" />
                             <input name="email" type="email" required placeholder="your@email.com"
-                                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all" />
+                                className="w-full bg-background border border-surface-border rounded-xl px-4 py-3 text-foreground placeholder-text-muted/60 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all" />
                         </div>
 
                         <textarea name="message" required rows={5} placeholder="Your message..."
-                            className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all resize-none relative z-10" />
+                            className="w-full bg-background border border-surface-border rounded-xl px-4 py-3 text-foreground placeholder-text-muted/60 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all resize-none relative z-10" />
 
                         <motion.button
                             whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(24, 210, 110, 0.5)" }}

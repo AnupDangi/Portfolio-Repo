@@ -23,9 +23,9 @@ export default function Footer() {
             <div className="max-w-5xl mx-auto px-6 sm:px-12 md:px-24 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
 
                 {/* Copyright */}
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-text-muted/70">
                     © {new Date().getFullYear()}{" "}
-                    <span className="text-gray-400 font-medium">Anup Dangi</span>
+                    <span className="text-text-muted font-medium">Anup Dangi</span>
                     . All rights reserved.
                 </p>
 
@@ -41,7 +41,7 @@ export default function Footer() {
                             whileHover={{ scale: 1.15 }}
                             whileTap={{ scale: 0.92 }}
                             transition={{ type: "spring", stiffness: 400, damping: 18 }}
-                            className="w-9 h-9 flex items-center justify-center rounded-lg border text-gray-400 hover:text-neon transition-colors duration-200"
+                            className="w-9 h-9 flex items-center justify-center rounded-lg border text-text-muted hover:text-neon transition-colors duration-200"
                             style={{
                                 borderColor: "var(--surface-border)",
                                 background: "var(--surface)",

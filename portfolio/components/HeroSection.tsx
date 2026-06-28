@@ -53,7 +53,7 @@ export default function HeroSection() {
 
                     <motion.p
                         variants={childVariants}
-                        className="text-xl text-gray-400 max-w-2xl mx-auto md:mx-0 leading-relaxed"
+                        className="text-xl text-text-muted max-w-2xl mx-auto md:mx-0 leading-relaxed"
                     >
                         Full Stack Developer & AI Engineer building products that improve human lives.
                     </motion.p>
@@ -74,10 +74,10 @@ export default function HeroSection() {
                         <motion.a
                             href="/Resume.pdf"
                             target="_blank"
-                            whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+                            whileHover={{ scale: 1.05, backgroundColor: "var(--surface-hover)" }}
                             whileTap={{ scale: 0.95 }}
                             transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                            className="px-8 py-3 rounded-full border border-white/20 text-white font-medium"
+                            className="px-8 py-3 rounded-full border border-foreground/20 text-foreground font-medium"
                         >
                             View Resume
                         </motion.a>

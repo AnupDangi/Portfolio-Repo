@@ -3,12 +3,18 @@ import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ExperienceSection from "../components/ExperienceSection";
 import ProjectsSection from "../components/ProjectsSection";
-import BlogsSection from "../components/BlogsSection";
+import ResearchSection from "../components/ResearchSection";
+import WritingSection from "../components/WritingSection";
+import ReadingSection from "../components/ReadingSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import FramerBackground from "../components/FramerBackground";
+import { getBooks, getArticles } from "../lib/content";
 
 export default function Home() {
+  const books = getBooks();
+  const articles = getArticles();
+
   return (
     <main className="min-h-screen text-foreground relative z-0 selection:bg-neon selection:text-black">
       <FramerBackground />
@@ -19,7 +25,9 @@ export default function Home() {
         <AboutSection />
         <ExperienceSection />
         <ProjectsSection />
-        <BlogsSection />
+        <ResearchSection />
+        <WritingSection initialArticles={articles} />
+        <ReadingSection initialBooks={books} />
         <ContactSection />
       </div>
 
