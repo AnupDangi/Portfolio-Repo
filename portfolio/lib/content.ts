@@ -66,14 +66,26 @@ export function getBooks(): Book[] {
     })
     .filter((book): book is Book => book !== null);
 
-  // Custom sort: Zero to One first, then DDIA, then Mom Test
-  const orderMap: Record<string, number> = {
-    'zero-to-one': 1,
-    'designing-data-intensive-applications': 2,
-    'the-mom-test': 3,
+  const monthMap: Record<string, number> = {
+    january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
+    july: 6, august: 7, september: 8, october: 9, november: 10, december: 11,
+    jan: 0, feb: 1, mar: 2, apr: 3, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11
   };
 
-  return books.sort((a, b) => (orderMap[a.slug] || 99) - (orderMap[b.slug] || 99));
+  const parseDateRead = (dateStr: string): number => {
+    if (!dateStr) return 0;
+    const parts = dateStr.trim().toLowerCase().split(/\s+/);
+    if (parts.length === 2) {
+      const month = monthMap[parts[0]] ?? 0;
+      const year = parseInt(parts[1], 10);
+      if (!isNaN(year)) {
+        return year * 12 + month;
+      }
+    }
+    return 0;
+  };
+
+  return books.sort((a, b) => parseDateRead(a.dateRead) - parseDateRead(b.dateRead));
 }
 
 export function getBookBySlug(slug: string): Book | null {
@@ -132,9 +144,9 @@ export function getArticleBySlug(slug: string): Article | null {
 
     const tags = metadata.tags
       ? metadata.tags
-          .replace(/[\[\]]/g, '')
-          .split(',')
-          .map((t) => t.trim().replace(/^['"]|['"]$/g, ''))
+        .replace(/[\[\]]/g, '')
+        .split(',')
+        .map((t) => t.trim().replace(/^['"]|['"]$/g, ''))
       : [];
 
     return {
